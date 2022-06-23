@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Post;
+use App\Http\Requests\PostRequest;
 
 // Post一覧を表示
 
@@ -35,7 +36,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
     return view('posts/edit')->with(['post' => $post]);
-
+        return view('posts/edit')->with(['post' => $post]);
     }
     
     public function update(PostRequest $request, Post $post)
@@ -44,6 +45,5 @@ class PostController extends Controller
     $post->fill($input_post)->save();
 
     return redirect('/posts/' . $post->id);
-
     }
 }
