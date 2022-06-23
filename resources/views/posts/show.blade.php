@@ -4,6 +4,7 @@
         <h3 class="title">
             {{ $post->title }}
         </h3>
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
         <div class="content">
             <div class="content__post">
                 <h3>コンテンツ</h3>

@@ -1,7 +1,6 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-        <body>
            <h2>コミュニティ</h2>
            [<a href='/posts/create'>投稿作成</a>]
            <div class='posts'>
