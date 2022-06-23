@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('/posts', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
+Route::post('/posts', 'PostController@store');
+Route::get('/posts/{post}', 'PostController@show');
 
 Auth::routes();
 
