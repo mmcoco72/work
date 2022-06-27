@@ -15,9 +15,9 @@ class CreateDiaryEmotionTable extends Migration
     {
         Schema::create('diary_emotion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('diary_id');
+            $table->unsignedInteger('diary_id');
             $table->foreign('diary_id')->references('id')->on('diaries')->onDelete('cascade');
-            $table->unsignedBigInteger('emotion_id');
+            $table->unsignedInteger('emotion_id');
             $table->foreign('emotion_id')->references('id')->on('emotions')->onDelete('cascade');
             $table->timestamps();
         });

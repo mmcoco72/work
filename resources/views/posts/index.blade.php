@@ -9,6 +9,9 @@
                         <h3 class='title'>
                             <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                         </h3>
+                        @foreach($post->categories as $category)
+                            <a href=''>{{ $category->name }}</a>
+                        @endforeach
                         <p class='body'>{{ $post->body }}</p>
                     </div>
                 @endforeach

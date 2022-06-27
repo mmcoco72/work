@@ -15,9 +15,9 @@ class CreateCategoryTaskTable extends Migration
     {
         Schema::create('category_task', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('task_id');
+            $table->unsignedInteger('task_id');
             $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');;
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });

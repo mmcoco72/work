@@ -7,11 +7,16 @@
             <div class="title">
                 <h3>タイトル</h3>
                 <input type="text" name="post[title]" placeholder="タイトル"/>
-<<<<<<< HEAD
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
-=======
                 <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
->>>>>>> ea97cf20c43b84c85b46d6424bf965dba1d57063
+            </div>
+            <div class="category">
+                <h3>カテゴリー</h3>
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="body">
                 <h3>コンテンツ</h3>

@@ -14,7 +14,7 @@ class CreateEmotionsTable extends Migration
     public function up()
     {
         Schema::create('emotions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('emotion', 20);
             $table->timestamps();
         });
