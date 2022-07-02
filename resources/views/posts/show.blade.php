@@ -5,9 +5,13 @@
             {{ $post->title }}
         </h3>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
+        <p class="category">
+            @foreach($post->categories as $category)
+                <a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
+            @endforeach
+        </p>
         <div class="content">
             <div class="content__post">
-                <h3>コンテンツ</h3>
                 <p>{{ $post->body }}</p>
             </div>
         </div>

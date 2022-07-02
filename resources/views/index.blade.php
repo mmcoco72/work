@@ -3,7 +3,9 @@
 @section('content')
         <div class="body">
             <div class="menu">
-                <h4 class='topictop'>日記一覧</h4>
+                <h4 class='topictop'>
+                    <a href="/posts">日記一覧</a>
+                </h4>
                 <p>作成</p>
                 <h4 class='topictop'>タスク一覧</h4>
                 <p>作成</p>
