@@ -8,6 +8,9 @@ use App\Post;
 class Category extends Model
 {
     protected $table = 'categories';
+    protected $fillable = [
+        'name'
+        ];
     
     public function posts()
     {

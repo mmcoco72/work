@@ -12,10 +12,10 @@
             </div>
             <div class="category">
                 <h3>カテゴリー</h3>
-                <select name="post[category_id]">
+                <select name="name">
                     @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
+                    @endforeach 
                 </select>
             </div>
             <div class="body">

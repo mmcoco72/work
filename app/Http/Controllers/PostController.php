@@ -24,7 +24,10 @@ class PostController extends Controller
     public function store(PostRequest $request, Post $post)
     {
         $input = $request['post'];
+        $category = $request->input('category_id');
         $post->fill($input)->save();
+        $post->categories()->attach($category);
+        
         return redirect('/posts/' . $post->id);
     }
     
@@ -35,7 +38,6 @@ class PostController extends Controller
     
     public function edit(Post $post)
     {
-    return view('posts/edit')->with(['post' => $post]);
         return view('posts/edit')->with(['post' => $post]);
     }
     

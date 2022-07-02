@@ -9,7 +9,6 @@ class Post extends Model
 {   
     protected $table = 'posts';
     
-    
     protected $fillable = [
         'title',
         'body',
@@ -22,7 +21,7 @@ class Post extends Model
 
     }
         
-    public function getPaginateByLimit(int $limit_count = 2)
+    public function getPaginateByLimit(int $limit_count = 10)
     {
         return $this::with('categories')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }

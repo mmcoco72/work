@@ -19,4 +19,5 @@
                 <input type="submit" value="保存"/>
             </form>
         </div>
+        <div class="back">[<a href="/posts">戻る</a>]</div>
 @endsection
