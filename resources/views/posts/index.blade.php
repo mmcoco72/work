@@ -23,6 +23,6 @@
            </div>
         </body>
         <div class="back">
-            <a href="/posts">戻る</a>
+            <a href="/">戻る</a>
         </div>
 @endsection

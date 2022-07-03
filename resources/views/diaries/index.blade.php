@@ -5,7 +5,9 @@
            <div class='diaries'>
                 @foreach($diaries as $diary)   
                    <div class='diary'>
-                       <h3 class='title'>{{ $diary->title }}</h3>
+                        <h3 class='title'>
+                           <a href="/diaries/{{ $diary->id }}">{{ $diary->title }}</a>
+                        </h3>
                        <p class='body'>{{ $diary->body }}</p>
                    </div>
                 @endforeach
