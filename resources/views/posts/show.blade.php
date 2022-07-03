@@ -15,7 +15,7 @@
                 <p>{{ $post->body }}</p>
             </div>
         </div>
-        <div class="footer">
+        <div class="back">
             <a href="/posts">戻る</a>
         </div>
 @endsection
