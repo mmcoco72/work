@@ -2,6 +2,7 @@
 
 @section('content')
            <h2>日記一覧</h2>
+           [<a href='/diaries/create'>新規作成</a>]
            <div class='diaries'>
                 @foreach($diaries as $diary)   
                    <div class='diary'>

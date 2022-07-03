@@ -10,6 +10,6 @@
             </div>
         </div>
         <div class="back">
-            <a href="/posts">戻る</a>
+            <a href="/diaries">戻る</a>
         </div>
 @endsection

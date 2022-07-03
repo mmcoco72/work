@@ -16,4 +16,16 @@ class DiaryController extends Controller
     {
         return view('diaries/show')->with(['diary' => $diary]);
     }
+    
+    public function create()
+    {
+        return view('diaries/create');
+    }
+    
+    public function store(Request $request, Diary $diary)
+    {
+        $input = $request['diary'];
+        $diary->fill($input)->save();
+        return redirect('/diaries/' . $diary->id);
+    }
 }
