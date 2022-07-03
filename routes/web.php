@@ -25,6 +25,7 @@ Route::put('/posts/{post}', 'PostController@update');
 Route::get('/categories/{category}', 'CategoryController@index');
 
 Route::get('/diaries', 'DiaryController@index');
+Route::get('/diaries/{diary}', 'DiaryController@show');
 
 
 Auth::routes();
