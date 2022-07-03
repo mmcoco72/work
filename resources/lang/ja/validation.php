@@ -148,7 +148,10 @@ return [
 
     'attributes' => [
         'post.title' => 'タイトル',
-        'post.body' => 'コンテンツ'
+        'post.body' => 'コンテンツ',
+        
+        'diary.title' => 'タイトル',
+        'diary.body' => 'コンテンツ'
         ],
 
 ];
