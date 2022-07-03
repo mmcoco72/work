@@ -17,7 +17,7 @@ class CreateDiariesTable extends Migration
             $table->increments('id');
             $table->string('title', 50);
             $table->string('body', 200);
-            $table->integer('value');
+            $table->integer('value')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

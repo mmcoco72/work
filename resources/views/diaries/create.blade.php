@@ -6,14 +6,15 @@
             @csrf
             <div class="title">
                 <h3>タイトル</h3>
-                <input type="text" name="diary[title]" placeholder="タイトル"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
-                <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
+                <input type="text" name="diary[title]" placeholder="タイトル" value="{{ old('diary.title') }}"/>
+                <p class="title__error" style="color:red">{{ $errors->first('diary.title') }}</p>
             </div>
             <div class="body">
                 <h3>コンテンツ</h3>
-                <textarea name="diary[body]" placeholder="面白いアニメを見つけた。"/></textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
+                <textarea name="diary[body]" placeholder="面白いアニメを見つけた。" value="{{ old('diary.body') }}"/></textarea>
+                <p class="body__error" style="color:red">{{ $errors->first('diary.body') }}</p>
+            </div>
+            <div class="value">
             </div>
             <input type="submit" value="保存"/>
         </form>
