@@ -7,8 +7,6 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Category;
 
-// Post一覧を表示
-
 class PostController extends Controller
 {   
     public function index(Post $post)
