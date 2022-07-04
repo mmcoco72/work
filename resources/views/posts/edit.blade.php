@@ -1,7 +1,7 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-        <h2 class="投稿編集"></h2>
+        <h2 class="title">投稿編集</h2>
         <div class="content">
             <form action="/posts/{{ $post->id }}" method="POST">
                 @csrf
@@ -19,5 +19,7 @@
                 <input type="submit" value="保存"/>
             </form>
         </div>
-        <div class="back">[<a href="/posts">戻る</a>]</div>
+        <div class="back">
+            [<a href="/posts">戻る</a>]
+        </div>
 @endsection

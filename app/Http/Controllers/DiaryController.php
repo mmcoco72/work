@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Diary;
 use App\Http\Requests\DiaryRequest;
+use App\Diary;
 
 class DiaryController extends Controller
 {
@@ -27,6 +27,20 @@ class DiaryController extends Controller
     {
         $input = $request['diary'];
         $diary->fill($input)->save();
+        
+        return redirect('/diaries/' . $diary->id);
+    }
+    
+    public function edit(Diary $diary)
+    {
+        return view('diaries/edit')->with(['diary' => $diary]);
+    }
+    
+    public function update(DiaryRequest $request, Diary $diary)
+    {
+        $input_diary = $request['diary'];
+        $diary->fill($input_diary)->save();
+    
         return redirect('/diaries/' . $diary->id);
     }
 }
