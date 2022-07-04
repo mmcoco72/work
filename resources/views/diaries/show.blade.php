@@ -9,6 +9,7 @@
                 <p>{{ $diary->body }}</p>
             </div>
         </div>
+        <p class="edit">[<a href="/diaries/{{ $diary->id }}/edit">編集</a>]</p>
         <div class="back">
             <a href="/diaries">戻る</a>
         </div>

@@ -25,8 +25,8 @@ class DiaryRequest extends FormRequest
     {
         return [
             'diary.title' => 'required|string|max:50',
-            'diary.body' => 'required|string|max:200',
-            'diary.value' => 'required|integer|between:1,5'
+            'diary.body' => 'required|string|max:200'
+            
         ];
     }
 }
