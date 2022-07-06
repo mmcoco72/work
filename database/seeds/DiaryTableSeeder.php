@@ -12,10 +12,10 @@ class DiaryTableSeeder extends Seeder
     public function run()
     {
         DB::table('diaries')->insert([[
-            'id' =>1, 'title' => 'title1', 'body' => 'body1', 'value' => 2, 'created_at' =>now(), 'updated_at' =>now()
+            'id' =>1, 'title' => 'title1', 'body' => 'body1', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-            'id' =>2, 'title' => 'title2', 'body' => 'body2', 'value' => 5, 'created_at' =>now(), 'updated_at' =>now() 
+            'id' =>2, 'title' => 'title2', 'body' => 'body2', 'created_at' =>now(), 'updated_at' =>now() 
             ]]);
     }
 }
