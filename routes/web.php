@@ -21,6 +21,7 @@ Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show');
 Route::get('/posts/{post}/edit', 'PostController@edit');
 Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
 
 Route::get('/categories/{category}', 'CategoryController@index');
 
@@ -29,8 +30,8 @@ Route::get('/diaries/create', 'DiaryController@create');
 Route::post('/diaries', 'DiaryController@store');
 Route::get('/diaries/{diary}', 'DiaryController@show');
 Route::get('/diaries/{diary}/edit', 'DiaryController@edit');
-Route::put('/diaries/{diary}/', 'DiaryController@update');
-
+Route::put('/diaries/{diary}', 'DiaryController@update');
+Route::delete('/diaries/{diary}', 'DiaryController@delete');
 
 
 
