@@ -17,4 +17,9 @@ class Diary extends Model
     {
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
+    
+    public function emotions()
+    {
+        return $this->belongsToMany('App\Emotion');
+    }
 }

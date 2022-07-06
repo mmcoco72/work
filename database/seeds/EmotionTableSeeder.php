@@ -12,22 +12,22 @@ class EmotionTableSeeder extends Seeder
     public function run()
     {
         DB::table('emotions')->insert([[
-                'emotion' => '怒り', 'created_at' =>now(), 'updated_at' =>now()
+                'name' => '怒り', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-                'emotion' => '不安', 'created_at' =>now(), 'updated_at' =>now()
+                'name' => '不安', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-                'emotion' => '悲しみ', 'created_at' =>now(), 'updated_at' =>now()
+                'name' => '悲しみ', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-                'emotion' => '安心', 'created_at' =>now(), 'updated_at' =>now()
+                'name' => '安心', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-                'emotion' => 'ワクワク', 'created_at' =>now(), 'updated_at' =>now()
+                'name' => 'ワクワク', 'created_at' =>now(), 'updated_at' =>now()
             ],
             [
-                'emotion' => '喜び', 'created_at' =>now(), 'updated_at' =>now() 
+                'name' => '喜び', 'created_at' =>now(), 'updated_at' =>now() 
             ]]);
     }
 }

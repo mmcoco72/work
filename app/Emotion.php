@@ -4,7 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Emorion extends Model
+class Emotion extends Model
 {
-    //
+    public function diaries()
+    {
+        return $this->belongsToMany('App\Diary');
+    }
 }
