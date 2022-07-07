@@ -11,6 +11,7 @@
                     <input type='text' name='diary[title]' value="{{ $diary->title }}"/>
                     <p class="title_error" style="color:red">{{ $errors->first('diary.title') }}</p>
                 </div>
+                <div class="emotion">
                 <div class='content__body'>
                     <h3>コンテンツ</h3>
                     <input type='text' name='diary[body]' value="{{ $diary->body }}"/>
