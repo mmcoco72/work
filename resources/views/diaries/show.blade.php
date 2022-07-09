@@ -4,6 +4,11 @@
         <h3 class="title">
             {{ $diary->title }}
         </h3>
+        <p class="emotion">
+            @foreach($diary->emotions as $emotion)
+                {{ $emotion->name }}
+            @endforeach
+        </p>
         <div class="content">
             <div class="content__diary">
                 <p>{{ $diary->body }}</p>

@@ -12,6 +12,18 @@
                     <p class="title_error" style="color:red">{{ $errors->first('diary.title') }}</p>
                 </div>
                 <div class="emotion">
+                <h3>感情選択</h3>
+                @foreach($emotions as $emotion)
+                    @if($diary->emotions->contains('id', $emotion->id))
+                        <input type="checkbox" name="emotions_array[name]" value="{{ $emotion->id }}" checked/>
+                    @else
+                        <input type="checkbox" name="emotions_array[name]" value="{{ $emotion->id }}"/>
+                    @endif
+                    <label for="">
+                        {{ $emotion->name }}
+                    </label>
+                @endforeach
+                </div>
                 <div class='content__body'>
                     <h3>コンテンツ</h3>
                     <input type='text' name='diary[body]' value="{{ $diary->body }}"/>
