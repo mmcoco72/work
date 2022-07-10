@@ -9,6 +9,11 @@
                         <h3 class='title'>
                            <a href="/diaries/{{ $diary->id }}">{{ $diary->title }}</a>
                         </h3>
+                        <p class="emotion">
+                            @foreach($diary->emotions as $emotion)
+                                {{ $emotion->name }}
+                            @endforeach
+                        </p>
                         <p class='body'>{{ $diary->body }}</p>
                     </div>
                     <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="post">
