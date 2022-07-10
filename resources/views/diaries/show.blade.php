@@ -18,8 +18,17 @@
         <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit">削除</button>
+            <button type="submit" onClick="return deleteCheck">削除</button>
         </form>
+        <script>
+            function deleteCheck(){
+                if (confirm("本当に削除してよろしいですか？")) {
+                    return true;
+                    } else {
+                    return false;
+                    }
+                }
+        </script>
         <div class="back">
             <a href="/diaries">戻る</a>
         </div>

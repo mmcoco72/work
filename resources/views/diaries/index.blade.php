@@ -16,11 +16,20 @@
                         </p>
                         <p class='body'>{{ $diary->body }}</p>
                     </div>
-                    <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="post">
+                    <form action="/diaries/{{ $diary->id }}" id="form_delete" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">削除</button>
+                        <button type="submit" onClick="return deleteCheck()">削除</button>
                     </form>
+                    <script>
+                        function deleteCheck(){
+                            if (confirm("本当に削除してよろしいですか？")) {
+                                return true;
+                                } else {
+                                return false;
+                            }
+                        }
+                    </script>
                 @endforeach
             </div>
             <div class='paginate'>
