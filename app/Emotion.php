@@ -15,4 +15,9 @@ class Emotion extends Model
     {
         return $this->belongsToMany('App\Diary');
     }
+    
+    public function getByEmotions(int $limit_count = 10)
+    {
+         return $this->diaries()->with('emotions')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }

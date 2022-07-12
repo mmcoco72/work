@@ -9,9 +9,13 @@ use App\Emotion;
 
 class DiaryController extends Controller
 {
-    public function index(Diary $diary)
+    public function index(Diary $diary, Emotion $emotions, Request $request)
     {
-        return view('diaries/index')->with(['diaries' => $diary->getPaginateByLimit()]);
+        if($request->all()){
+            return view('diaries/index')->with(['diaries' => $diary->getSearchDiaries($request->all()), 'emotions' => $emotions->get()]);
+        }
+        //ifで表示するものがない時のデフォルト表示
+        return view('diaries/index')->with(['diaries' => $diary->getPaginateByLimit(), 'emotions' => $emotions->get()]);
     }
     
     public function show(Diary $diary)

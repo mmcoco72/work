@@ -1,7 +1,7 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-           <h2>コミュニティ</h2>
+            <h2>コミュニティ</h2>
            [<a href='/posts/create'>投稿作成</a>]
            <div class='posts'>
                 @foreach ($posts as $post)
@@ -21,15 +21,6 @@
                         @method('DELETE')
                         <button type="submit" onClick="return deleteCheck()">削除</button>
                     </form>
-                    <script>
-                        function deleteCheck(){
-                            if (confirm("本当に削除してよろしいですか？")) {
-                                return true;
-                                } else {
-                                return false;
-                            }
-                        }
-                    </script>
                 @endforeach
             </div>
            <div class='paginate'>

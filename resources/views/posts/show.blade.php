@@ -20,15 +20,6 @@
             @method('DELETE')
             <button type="submit" onClick="return deleteCheck()">削除</button>
         </form>
-        <script>
-            function deleteCheck(){
-                if (confirm("本当に削除してよろしいですか？")) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-                    </script>
         <div class="back">
             <a href="/posts">戻る</a>
         </div>

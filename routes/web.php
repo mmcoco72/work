@@ -33,6 +33,7 @@ Route::get('/diaries/{diary}/edit', 'DiaryController@edit');
 Route::put('/diaries/{diary}', 'DiaryController@update');
 Route::delete('/diaries/{diary}', 'DiaryController@delete');
 
+Route::get('/emotions', 'EmotionController@index');
 
 
 Auth::routes();
