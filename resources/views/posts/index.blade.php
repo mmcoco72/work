@@ -1,7 +1,7 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-           <h2>コミュニティ</h2>
+            <h2>コミュニティ</h2>
            [<a href='/posts/create'>投稿作成</a>]
            <div class='posts'>
                 @foreach ($posts as $post)
@@ -19,7 +19,7 @@
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">削除</button>
+                        <button type="submit" onClick="return deleteCheck()">削除</button>
                     </form>
                 @endforeach
             </div>

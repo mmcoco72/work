@@ -18,7 +18,7 @@
         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit">削除</button>
+            <button type="submit" onClick="return deleteCheck()">削除</button>
         </form>
         <div class="back">
             <a href="/posts">戻る</a>
