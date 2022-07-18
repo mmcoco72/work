@@ -13,10 +13,18 @@
                 <h3>感情選択</h3>
                 @foreach($emotions as $emotion)
                     <label>
-                        <input type="checkbox" name="emotions_array[name]" value="{{ $emotion->id }}">
+                        <input type="checkbox" name="emotions_array[]" value="{{ $emotion->id }}">
                             {{ $emotion->name }}
                         </input>
                     </label>
+                    <select name="emotion_degree[]">
+                        <option value=0 selected>未選択</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
                 @endforeach
             </div>
             <div class="body">

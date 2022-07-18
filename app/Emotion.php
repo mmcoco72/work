@@ -8,12 +8,13 @@ class Emotion extends Model
 {   
     protected $table = 'emotions';
     protected $fillable = [
-        'name'
+        'name',
+        'degree'
         ];
     
     public function diaries()
     {
-        return $this->belongsToMany('App\Diary');
+        return $this->belongsToMany('App\Diary')->withPivot('degree');
     }
     
     public function getByEmotions(int $limit_count = 10)

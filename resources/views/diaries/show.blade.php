@@ -7,6 +7,7 @@
         <p class="emotion">
             @foreach($diary->emotions as $emotion)
                 {{ $emotion->name }}
+                    <p class="emotion_degree">感情を数値化：{{ $emotion->pivot->degree }}</p>
             @endforeach
         </p>
         <div class="content">
@@ -18,7 +19,7 @@
         <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" onClick="return deleteCheck">削除</button>
+            <button type="submit" onClick="return deleteCheck();">削除</button>
         </form>
         <script>
             function deleteCheck(){

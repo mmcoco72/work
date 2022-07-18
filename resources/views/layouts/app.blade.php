@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script>
         function deleteCheck(){
-            if (confirm("本当に削除してよろしいですか？")) {
+            if (window.confirm("本当に削除してよろしいですか？")) {
                 return true;
             } else {
                 return false;

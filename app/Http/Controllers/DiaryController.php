@@ -24,18 +24,20 @@ class DiaryController extends Controller
         return view('diaries/show')->with(['diary' => $diary, 'emotions' => $emotions]);
     }
     
-    public function create(Emotion $emotions)
-    {
+    public function create(Emotion $emotions){
+        
         return view('diaries/create')->with(['emotions' => $emotions->get()]);
-    }
+    }   
     
     public function store(DiaryRequest $request, Diary $diary)
     {
         $input = $request['diary'];
         $input_emotions = $request->emotions_array;
-        $diary->fill($input)->save();
+        $degree = $request->emotion_degree;
         
-        $diary->emotions()->attach($input_emotions);
+        $diary->fill($input)->save();
+        $diary->relateWithEmotionAndDegree($input_emotions, $degree);
+        
         return redirect('/diaries/' . $diary->id);
     }
     
@@ -49,9 +51,10 @@ class DiaryController extends Controller
     {
         $input_diary = $request['diary'];
         $input_emotions = $request->emotions_array;
-        $diary->fill($input_diary)->save();
         
+        $diary->fill($input_diary)->save();
         $diary->emotions()->sync($input_emotions);
+        
         return redirect('/diaries/' . $diary->id);
     }
     

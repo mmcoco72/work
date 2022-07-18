@@ -19,6 +19,7 @@ class CreateDiaryEmotionTable extends Migration
             $table->foreign('diary_id')->references('id')->on('diaries')->onDelete('cascade');
             $table->unsignedInteger('emotion_id');
             $table->foreign('emotion_id')->references('id')->on('emotions')->onDelete('cascade');
+            $table->integer('degree')->nullable();
             $table->timestamps();
         });
     }
