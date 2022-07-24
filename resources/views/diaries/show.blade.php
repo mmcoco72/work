@@ -15,7 +15,7 @@
             </div>
         </div>
         <p class="edit">[<a href="/diaries/{{ $diary->id }}/edit">編集</a>]</p>
-        <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="post">
+        <form action="/diaries/{{ $diary->id }}" id="form_{{ $diary->id }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" onClick="return deleteCheck()">削除</button>

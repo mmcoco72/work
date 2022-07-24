@@ -16,33 +16,31 @@
                     <input type="submit"/>
                 </div>
             </form>
-            <div class="item_list">
-                <div class="diaries">
-                    @foreach($diaries as $diary)   
-                        <div class="diary" data-emotions_array[]='[ "{{ $emotion->id }}" ]'>
-                            <h3 class="title">
-                                <a href="/diaries/{{ $diary->id }}">{{ $diary->title }}</a>
-                            </h3>
-                            <p class="emotion">
-                                @foreach($diary->emotions as $emotion)
-                                    <p>{{ $emotion->name }}：{{ $emotion->pivot->degree }}</p>
-                                @endforeach
-                            </p>
-                            <p class="body">{{ $diary->body }}</p>
-                        </div>
-                        <p class="date">{{ $diary->created_at }}</p>
-                        <form action="/diaries/{{ $diary->id }}" id="form_delete" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onClick="return deleteCheck();">削除</button>
-                        </form>
-                    @endforeach
-                </div>
+            <div class="diaries">
+                @foreach($diaries as $diary)   
+                    <div class="diary" data-emotions_array[]='[ "{{ $emotion->id }}" ]'>
+                        <h3 class="title">
+                            <a href="/diaries/{{ $diary->id }}">{{ $diary->title }}</a>
+                        </h3>
+                        <p class="emotion">
+                            @foreach($diary->emotions as $emotion)
+                                <p>{{ $emotion->name }}：{{ $emotion->pivot->degree }}</p>
+                            @endforeach
+                        </p>
+                        <p class="body">{{ $diary->body }}</p>
+                    </div>
+                    <p class="date">{{ $diary->created_at }}</p>
+                    <form action="/diaries/{{ $diary->id }}" id="form_delete" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onClick="return deleteCheck();">削除</button>
+                    </form>
+                @endforeach
             </div>
             <div class="paginate">
                {{ $diaries->links() }}
             </div>
-        <div class="back">
-            <a href="/">戻る</a>
-        </div>
+            <div class="back">
+                <a href="/">戻る</a>
+            </div>
 @endsection

@@ -15,7 +15,7 @@
                 @foreach($emotions as $emotion)
                     <label>
                         <input type="checkbox" name="emotions_array[{{ $emotion->name }}]" value="{{ $emotion->id }}">
-                            {{ $emotion->name }}
+                            <a href="/emotions/{{ $emotion->id }}">{{ $emotion->name }}</a>
                         </input>
                     </label>
                         <select name="emotion_degree[]">//感情の度合いのデフォルト表示
@@ -37,6 +37,6 @@
             </div>
             <input type="submit" value="保存"/>
         </form>
-        <div class="back">[<a href="/diaries">戻る</a>]</div>
+        <div class="back">[<a href="/diaries">日記一覧に戻る</a>]</div>
 @endsection
 

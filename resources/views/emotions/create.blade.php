@@ -4,7 +4,7 @@
         <h2>感情作成</h2>
         <form action="/diaries/create" method="POST">
             @csrf
-            <div class="emotion_name">
+            <div class="emotion">
                 <h3>感情名</h3>
                 <input type="text" name="emotion[name]" placeholder="ワクワク" value="{{ old('emotion.name') }}"/>
                 <p class="name__error" style="color:red">{{ $errors->first('emotion.name') }}</p>

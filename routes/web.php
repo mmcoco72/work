@@ -36,6 +36,8 @@ Route::delete('/diaries/{diary}', 'DiaryController@delete');
 
 Route::get('/emotions/create', 'EmotionController@create');
 Route::post('/diaries/create', 'EmotionController@store');
+Route::get('/emotions/{emotion}', 'EmotionController@show');
+Route::delete('/emotions/{emotion}', 'EmotionController@delete');
 
 
 Auth::routes();

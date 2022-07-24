@@ -20,4 +20,15 @@ class EmotionController extends Controller
         
         return redirect('/diaries/create');
     }
+    
+    public function show(Emotion $emotion)
+    {
+        return view('emotions/show')->with(['emotion' => $emotion]);
+    }
+    
+    public function delete(Emotion $emotion)
+    {
+        $emotion->delete();
+        return redirect('/diaries/create');
+    }
 }
