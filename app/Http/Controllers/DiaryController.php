@@ -30,7 +30,7 @@ class DiaryController extends Controller
     public function create(Emotion $emotions){
         
         return view('diaries/create')->with(['emotions' => $emotions->get()]);
-    }   
+    }
     
     public function store(DiaryRequest $request, Diary $diary)
     {

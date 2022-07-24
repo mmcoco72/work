@@ -43,6 +43,7 @@
                {{ $diaries->links() }}
             </div>
         <div class="back">
-            <a href="/diaries">戻る</a>
+            <a href="/diaries">一覧画面に戻る</a>
+            <a href="/">トップ画面に戻る</a>
         </div>
 @endsection

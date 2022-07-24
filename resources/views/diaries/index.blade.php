@@ -2,7 +2,7 @@
 
 @section('content')
             <h2>日記一覧</h2>
-            [<a href='/diaries/create'>新規作成</a>]
+            [<a href='/diaries/create'>日記の新規作成</a>]
             <form action="/diaries/search" method="GET">
                 <div class="search_area">
                     <span class="search_emotions_title">絞り込み検索</span>

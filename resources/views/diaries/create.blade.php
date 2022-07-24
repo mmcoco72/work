@@ -11,6 +11,7 @@
             </div>
             <div class="emotion">
                 <h3>感情選択</h3>
+                [<a href='/emotions/create'>感情の新規作成</a>]</br>
                 @foreach($emotions as $emotion)
                     <label>
                         <input type="checkbox" name="emotions_array[{{ $emotion->name }}]" value="{{ $emotion->id }}">
