@@ -39,7 +39,7 @@ class DiaryController extends Controller
         $degree = $request->emotion_degree;
 
         $diary->fill($input_diary)->save();
-        $diary->relateWithEmotionAndDegree($degree);
+        $diary->relateWithEmotionAndDegree($degree, $input_emotions);
         
         return redirect('/diaries/' . $diary->id);
     }
@@ -55,11 +55,9 @@ class DiaryController extends Controller
         $input_diary = $request['diary'];
         $input_emotions = $request->emotions_array;
         $degree = $request->emotion_degree;
-        
+        // dd($degree);
         $diary->fill($input_diary)->save();
-        $diary->updatedWithEmotionAndDegree($degree);
-        // $diary->detachEmotionAndDegree($degree, $input_emotions);
-        
+        $data = $diary->updatedWithEmotionAndDegree($degree, $input_emotions);
         
         return redirect('/diaries/' . $diary->id);
     }

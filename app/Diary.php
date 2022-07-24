@@ -35,14 +35,14 @@ class Diary extends Model
         return $diary->paginate(10);
     }
     
-    public function relateWithEmotionAndDegree($degree, $input_emotions)
-    {
+    public function relateWithEmotionAndDegree($degree)
+    {   
         foreach($degree as $key => $deg){  //$deg = 選択したemotion_degreeの値
-            $emotion=Emotion::find($key+1)->id;  //$keyとid(emotionstable)調節
+            $emotion_id = Emotion::find($key+1)->id;  //$keyとid(emotionstable)調節
                 if(intval($degree[$key]) > 0  //$keyを参照して$degreeの値とを0比較
-                    && !array_search($emotion, $input_emotions)//既存の$input_emotion以外紐付け可
+                    // && !array_search($emotion, $input_emotions)//既存の$input_emotion以外紐付け可
                 ){  
-                    $this->emotions()->attach($emotion,[
+                    $this->emotions()->attach($emotion_id,[
                     'degree' => intval($degree[$key])
                     ]); 
                 }   
@@ -50,27 +50,14 @@ class Diary extends Model
     }
     
     public function updatedWithEmotionAndDegree($degree)
-    {
+    {   
+        $degree_emotion = [];
         foreach($degree as $key => $deg){  //$deg = 選択したemotion_degreeの値
-                if(intval($degree[$key]) > 0)//$keyを参照して$degreeの値とを0比較
-                {  
-                    $emotion=Emotion::find($key+1)->id;  //$keyとid(emotionstable)調節
-                    $this->emotions()->updateExistingPivot($emotion,[
-                    'degree' => intval($degree[$key])
-                    ]); 
-                }   
-        }
-    }
-    
-    // public function detachEmotionAndDegree($degree, $input_emotions)
-    // {   
-    //     foreach($degree as $key => $deg){  
-    //                 $emotion=Emotion::find($key+1)->id;
-    //         if(array_search($emotion, $input_emotions)){//選択しないemotion,degree排除
-    //             $this->emotions()->detach($emotion,[
-    //                     'degree' => intval($degree[$key])
-    //                     ]); 
-    //         }   
-    //     }
-    // }
+            if(intval($degree[$key]) > 0){
+                $emotion_id = Emotion::find($key+1)->id;
+                $degree_emotion += [$emotion_id => ['degree' => intval($degree[$key])]];
+            }   
+        }   
+        $this->emotions()->sync($degree_emotion); 
+    }   
 }
