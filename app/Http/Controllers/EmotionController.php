@@ -4,11 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Emotion;
+use App\Http\Requests\EmotionRequest;
 
 class EmotionController extends Controller
 {
-    public function index(Emotion $emotions)
+    public function create()
     {
-        return view('emotions/index')->with(['diaries' => $emotions->getByEmotions(), 'emotions' => $emotions->get()]);
+        return view('emotions/create');
+    }
+    
+    public function store(EmotionRequest $request, Emotion $emotion)
+    {
+        $input_emotion = $request['emotion'];
+        $emotion->fill($input_emotion)->save();
+        
+        return redirect('/diaries/create');
+    }
+    
+    public function show(Emotion $emotion)
+    {
+        return view('emotions/show')->with(['emotion' => $emotion]);
+    }
+    
+    public function delete(Emotion $emotion)
+    {
+        $emotion->delete();
+        return redirect('/diaries/create');
     }
 }

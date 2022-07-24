@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DiaryRequest extends FormRequest
+class EmotionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class DiaryRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,8 +24,7 @@ class DiaryRequest extends FormRequest
     public function rules()
     {
         return [
-            'diary.title' => 'required|string|max:50',
-            'diary.body' => 'required|string|max:200',
+            'emotion.name' => 'required|string|max:10'
         ];
     }
 }

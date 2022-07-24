@@ -26,6 +26,7 @@ Route::delete('/posts/{post}', 'PostController@delete');
 Route::get('/categories/{category}', 'CategoryController@index');
 
 Route::get('/diaries', 'DiaryController@index');
+Route::get('/diaries/search', 'DiaryController@search');
 Route::get('/diaries/create', 'DiaryController@create');
 Route::post('/diaries', 'DiaryController@store');
 Route::get('/diaries/{diary}', 'DiaryController@show');
@@ -33,7 +34,10 @@ Route::get('/diaries/{diary}/edit', 'DiaryController@edit');
 Route::put('/diaries/{diary}', 'DiaryController@update');
 Route::delete('/diaries/{diary}', 'DiaryController@delete');
 
-Route::get('/emotions', 'EmotionController@index');
+Route::get('/emotions/create', 'EmotionController@create');
+Route::post('/diaries/create', 'EmotionController@store');
+Route::get('/emotions/{emotion}', 'EmotionController@show');
+Route::delete('/emotions/{emotion}', 'EmotionController@delete');
 
 
 Auth::routes();

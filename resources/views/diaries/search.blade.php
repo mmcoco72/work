@@ -1,11 +1,11 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-        <h2 class="title">日記一覧</h2>
+        <h2>日記一覧</h2>
         <div class="contents">
-            [<a href='/diaries/create'>日記の新規作成</a>]
+            [<a href='/diaries/create'>新規作成</a>]
             <form action="/diaries/search" method="GET">
-                <div class="search_area">
+                <div class="contents__search-area">
                     <span class="search_emotions_title">絞り込み検索</span>
                         @foreach($emotions as $emotion)
                             <label>
@@ -17,7 +17,7 @@
                     <input type="submit"/>
                 </div>
             </form>
-            <div class="diaries">
+            <div class="contens__diaries">
                 @foreach($diaries as $diary)   
                     <div class="diary" data-emotions_array[]='[ "{{ $emotion->id }}" ]'>
                         <h3 class="contents__title">
@@ -30,19 +30,21 @@
                         </p>
                         <p class="contents__body">{{ $diary->body }}</p>
                     </div>
-                    <p class="date">{{ $diary->created_at }}</p>
+                    <p class="contents__date">{{ $diary->created_at }}</p>
                     <form action="/diaries/{{ $diary->id }}" id="form_delete" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onClick="return deleteCheck();">削除</button>
                     </form>
                 @endforeach
+                </div>
             </div>
             <div class="paginate">
                {{ $diaries->links() }}
             </div>
             <div class="back">
-                <a href="/">戻る</a>
+                <a href="/diaries">一覧画面に戻る</a>
+                <a href="/">トップ画面に戻る</a>
             </div>
         </div>
 @endsection

@@ -151,7 +151,9 @@ return [
         'post.body' => 'コンテンツ',
         
         'diary.title' => 'タイトル',
-        'diary.body' => 'コンテンツ'
+        'diary.body' => 'コンテンツ',
+        
+        'emotion.name' => '感情名'
         ],
 
 ];
